@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+
+:root {
+  --primary-light-red: hsl(0, 100%, 67%);
+  --primary-orangey-yellow: hsl(39, 100%, 56%);
+  --primary-green-teal: hsl(166, 100%, 37%);
+  --primary-cobalt-blue: hsl(234, 85%, 45%);
+  --neutral-white: hsl(0, 0%, 100%);
+  --neutral-pale-blue: hsl(221, 100%, 96%);
+  --neutral-light-lavender: hsl(241, 100%, 89%);
+  --neutral-dark-gray-blue: hsl(224, 30%, 27%);
+  --gradient-background-light-slate-blue: hsl(252, 100%, 67%);
+  --gradient-background-light-royal-blue: hsl(241, 81%, 54%);
+  --gradient-circle-violet-blue: hsla(256, 72%, 46%, 1);
+  --gradient-circle-persian-blue: hsla(241, 72%, 46%, 0);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+html,
+body,
+main {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-size: 18px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  border-radius: 30px;
+  overflow: hidden;
+  width: 40%;
+  max-width: 800px;
+  min-width: 600px;
+  box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, 0.15);
+}
+
+.result {
+  background-image: linear-gradient(var(--gradient-background-light-slate-blue), var(--gradient-background-light-royal-blue));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  border-radius: 30px;
+  width: 45%;
+}
+
+.score {
+  height: 40%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-image: linear-gradient(var(--gradient-circle-violet-blue), var(--gradient-circle-persian-blue));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.summary {
+  width: 55%;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
