@@ -15,6 +15,10 @@
   --gradient-background-light-royal-blue: hsl(241, 81%, 54%);
   --gradient-circle-violet-blue: hsla(256, 72%, 46%, 1);
   --gradient-circle-persian-blue: hsla(241, 72%, 46%, 0);
+  --gradient-background: linear-gradient(var(--gradient-background-light-slate-blue), var(--gradient-background-light-royal-blue));
+  --gradient-circle: linear-gradient(var(--gradient-circle-violet-blue), var(--gradient-circle-persian-blue));
+  --button-background: var(--neutral-dark-gray-blue);
+  --button-background-hover: var(--gradient-background);
 }
 
 * {
@@ -45,14 +49,15 @@ main {
   display: flex;
   border-radius: 30px;
   overflow: hidden;
-  width: 40%;
-  /*max-width: 900px;*/
-  min-width: 600px;
-  height: 45%;
-  min-height: 390px;
-  /*max-height: 1152px;*/
   box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, 0.15);
   aspect-ratio: 20/13;
+}
+
+.view {
+  max-width: 40%;
+  min-width: 600px;
+  min-height: 390px;
+  max-height: 45%;
 }
 
 .result,
@@ -65,7 +70,7 @@ main {
 /*result section*/
 
 .result {
-  background-image: linear-gradient(var(--gradient-background-light-slate-blue), var(--gradient-background-light-royal-blue));
+  background-image: var(--gradient-background);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,7 +91,7 @@ main {
 .score {
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background-image: linear-gradient(var(--gradient-circle-violet-blue), var(--gradient-circle-persian-blue));
+  background-image: var(--gradient-circle);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -196,13 +201,68 @@ main {
 }
 
 .summary button {
-  background-color: var(--neutral-dark-gray-blue);
+  background-color: var(--button-background);
   color: var(--neutral-white);
   border-radius: 100px;
   border: none;
   height: 14%;
   font-size: 0.8rem;
   font-weight: 700;
+}
+
+.summary button:hover {
+  background-image: var(--button-background-hover);
+}
+
+@media only screen and (max-width: 425px) {
+
+  html {
+    font-size: 14px;
+  }
+
+  body,
+  main,
+  .view,
+  .content {
+    min-width: 100%;
+    min-height: 100%;
+    overflow: scroll;
+  }
+
+  main {
+
+  }
+
+  .content {
+    border-radius: 0;
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .view {
+    max-width: 100%;
+  }
+
+  .result,
+  .summary {
+    width: 100%;
+    padding: 30px 30px 40px;
+  }
+
+  .result {
+    border-radius: 0px 0px 15px 15px;
+    height: 45%
+  }
+
+  .score {
+    padding: 20px
+  }
+  
+  .summary {
+    padding-top: 20px;
+    height: 60%;
+  }
+
 }
 
 /*attribution*/
